@@ -1,0 +1,56 @@
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<button>shuffle</button>
+<div id="outer">
+  <div id="inner">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+<style>
+  #outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #inner{
+    width:304px;
+    height:304px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #inner div{
+    border:1px solid black;
+    height:100px;
+    width:100px;
+    margin:0;
+    padding:0;
+    border-spacing:0;
+  }
+</style>
+
+
+<script>
+  const COLOR_LIST = ["silver","yellow","midnightblue","red","darkgreen","chocolate"]
+
+  $('button').on('click', function() {
+    var colors = [0,0,0,0,0,0];
+    $("#inner").children().each(function(i, elem){
+      var colorNum = Math.floor(Math.random() * 6);
+      $(elem).css('background-color',COLOR_LIST[colorNum]);
+      colors[colorNum] += 1;
+    });));
+
+    if(Math.max(...colors)>4){
+      $('button').click();
+    }
+  });
+</script>
