@@ -55,16 +55,18 @@
       width:100vw !important;
     }
     #inner{
-      width:310px;
-      height:310px;
+      width:90vw;
+      height:90vw;
+      max-width:600px;
+      max-height:600px;
       display: flex;
       flex-wrap: wrap;
       align-content: flex-start;
     }
     #inner div{
       border:1px solid black;
-      height:100px;
-      width:100px;
+      height:calc(100% / 3);
+      width:calc(100% / 3 - 2px);
       margin:0;
       padding:0;
       border-spacing:0;
@@ -73,6 +75,7 @@
 
 
   <script>
+    //g,y,b,r,g,o
     const COLOR_LIST = ["silver","yellow","midnightblue","#F10A0A","darkgreen","#F97C26"];
     
 
